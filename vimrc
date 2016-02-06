@@ -97,7 +97,7 @@ nnoremap ^ <nop>
 " lightline config cuz it looks so kewl
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'jellybeans',
       \ 'component': {
       \   'readonly': '%{&readonly?"x":""}',
       \ },
