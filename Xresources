@@ -1,0 +1,53 @@
+! Xft Settings ---------------------------------------------------------------
+
+Xft.dpi:		96
+Xft.antialias:	true
+Xft.rgba:		rgb
+dft.hinting:	true
+Xft.hintstyle:	hintfull
+
+! URxvt Settings -------------------------------------------------------------
+
+URxvt*geometry:					130x38
+URxvt*borderLess:				false
+URxvt*scrollBar:				false
+URxvt*font:						xft:gohufont:12
+URxvt*boldfont:					xft:gohufont:12
+URxvt*cursorBlink:				true
+URxvt*cursorUnderline:			true
+URxvt*urlLauncher:				dwb
+URxvt*termName:					rxvt-256color
+URxvt*perl-lib:					/opt/pkg/lib/urxvt/perl/
+URxvt.perl-ext-common: 			default,macosx-clipboard
+URxvt*keysym.M-c: 				perl:macosx-clipboard:copy
+URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
+URxvt.letterSpace: 				1
+
+
+URxvt.colorIT:			#cacaca
+URxvt.colorBD:			#ede265
+
+URxvt.colorUL:			#ffffff
+URxvt*background:		#1d1d1d
+URxvt*foreground:		#b3b4b1
+
+*color0:    #1d1d1d
+*color1:    #784742
+*color2:    #427363
+*color3:    #665847
+*color4:    #6a708b
+*color5:    #7a378b
+*color6:    #52707b
+*color7:    #b3b3b3
+
+*color8:    #4c4c4c
+*color9:    #d43f10
+*color10:   #cef318
+*color11:   #ede265
+*color12:   #6ac0fd
+*color13:   #ef79ae
+*color14:   #49d4dd
+*color15:   #ffffff
+
+*highlightColor:            #665847
+*highlightTextColor:        #ffffff
