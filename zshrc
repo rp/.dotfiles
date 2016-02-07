@@ -18,10 +18,8 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 
 # prompts
-#PROMPT="
-#%{$fg_bold[black]%}  ───  "
 PROMPT="
-%{$fg_bold[black]%}  »  "
+%{$fg_bold[black]%}  �  "
 RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 
 # vi mode
@@ -40,7 +38,7 @@ export PAGER=more
 export TERM=rxvt-256color
 
 # OPAM stuff
-. /Users/rahul/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # remove path duplicates cuz it bothers me
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`

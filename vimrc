@@ -19,6 +19,7 @@ set autowrite
 set noswapfile
 set nobackup
 set encoding=utf-8
+set fileencoding=utf-8
 set number " show line numbers
 set showmatch " highlight matching [{()}]
 set backspace=indent,eol,start " fix backspace cuz it sucks
