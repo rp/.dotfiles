@@ -1,7 +1,8 @@
 #!/bin/sh
 
-bspc config border_width        2
+bspc config border_width        3
 bspc config window_gap          10
+bspc config top_padding			20
 
 i=1
 for monitor in $(bspc query -M); do

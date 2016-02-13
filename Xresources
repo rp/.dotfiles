@@ -3,7 +3,7 @@
 Xft.dpi:		96
 Xft.antialias:	true
 Xft.rgba:		rgb
-dft.hinting:	true
+Xft.hinting:	true
 Xft.hintstyle:	hintfull
 
 ! URxvt Settings -------------------------------------------------------------
@@ -11,16 +11,16 @@ Xft.hintstyle:	hintfull
 URxvt*geometry:					130x38
 URxvt*borderLess:				false
 URxvt*scrollBar:				false
-URxvt*font:						xft:gohufont:12
-URxvt*boldfont:					xft:gohufont:12
+URxvt*font:						xft:gohufont-medium:size=12
+URxvt*boldfont:					xft:gohufont-medium:size=12
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
-URxvt*urlLauncher:				dwb
+URxvt*urlLauncher:				firefox
 URxvt*termName:					rxvt-256color
-URxvt*perl-lib:					/opt/pkg/lib/urxvt/perl/
-URxvt.perl-ext-common: 			default,macosx-clipboard
-URxvt*keysym.M-c: 				perl:macosx-clipboard:copy
-URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
+!URxvt*perl-lib:				/opt/pkg/lib/urxvt/perl/
+!URxvt.perl-ext-common: 		default,macosx-clipboard
+!URxvt*keysym.M-c: 				perl:macosx-clipboard:copy
+!URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
 URxvt.letterSpace: 				1
 
 
