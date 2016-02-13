@@ -17,7 +17,7 @@ xrdb -load ~/.dotfiles/Xresources
 
 nm-applet &
 xfce4-power-manager
-tint3 -c ~/.dotfiles/tint3rc &
+#tint3 -c ~/.dotfiles/tint3rc &
 
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -27,5 +27,5 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=setting'
 compton -cCf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
 
 sxhkd -c ~/.dotfiles/sxhkdrc &
-#urxvt &
+#exec bspwm
 exec bspwm -c ~/.dotfiles/bspwmrc

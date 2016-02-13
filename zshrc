@@ -62,7 +62,6 @@ alias c='clear'
 alias s='sudo'
 
 alias vi='vim'
-alias sv='sudo vim'
 
 ## }}}
 

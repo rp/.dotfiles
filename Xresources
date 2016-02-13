@@ -1,9 +1,11 @@
 ! Xft Settings ---------------------------------------------------------------
 
+Xft.autohint:	0
+Xft.lcdfilter:	lcddefault
 Xft.dpi:		96
-Xft.antialias:	true
+Xft.antialias:	1
 Xft.rgba:		rgb
-Xft.hinting:	true
+Xft.hinting:	1
 Xft.hintstyle:	hintfull
 
 ! URxvt Settings -------------------------------------------------------------
@@ -11,8 +13,10 @@ Xft.hintstyle:	hintfull
 URxvt*geometry:					130x38
 URxvt*borderLess:				false
 URxvt*scrollBar:				false
-URxvt*font:						xft:gohufont-medium:size=12
-URxvt*boldfont:					xft:gohufont-medium:size=12
+!URxvt*font:						xft:GohuFont:style=Regular:antialias=true
+!URxvt*boldfont:					xft:GohuFont:style=Bold:antialias=true
+URxvt*font:						xft:Terminus:size=14
+URxvt*boldfont:					xft:Terminus:size=14
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
 URxvt*urlLauncher:				firefox
@@ -21,7 +25,7 @@ URxvt*termName:					rxvt-256color
 !URxvt.perl-ext-common: 		default,macosx-clipboard
 !URxvt*keysym.M-c: 				perl:macosx-clipboard:copy
 !URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
-URxvt.letterSpace: 				1
+!URxvt.letterSpace: 				-1
 
 
 URxvt.colorIT:			#cacaca
