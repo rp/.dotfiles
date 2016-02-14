@@ -5,7 +5,7 @@
 super + alt + Escape
 	bspc quit
 
-super + w
+super + q
 	bspc window -c
 
 super + t
@@ -83,8 +83,12 @@ super + @button{1-3}
 super + Return
 	urxvt
 
+super + w
+	firefox
+
 super + space
-	dmenu_run -i -h 20 -y 20 -w 250 -q -l 5 -p "> "
+#dmenu_run -i -h 20 -y 20 -w 250 -q -l 5 -p "» "
+	dmenu_run -i -p "»" 
 
 # make sxhkd reload its configuration files:
 super + Escape
