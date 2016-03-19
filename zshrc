@@ -1,14 +1,3 @@
-#  ________   ________   ___  ___     
-# |\_____  \ |\   ____\ |\  \|\  \    
-#  \|___/  /|\ \  \___|_\ \  \\\  \   
-#      /  / / \ \_____  \\ \   __  \  
-#     /  /_/__ \|____|\  \\ \  \ \  \ 
-#    |\________\ ____\_\  \\ \__\ \__\
-#     \|_______||\_________\\|__|\|__|
-#               \|_________|          
-#
-#			-- Rahul Parhi
-
 ## MAIN {{{
                        
 # auto completion
@@ -34,16 +23,22 @@ bindkey "^U" backward-kill-line
 
 ## ENVIRONMENT {{{
 export EDITOR=vim
-export PAGER=more
+export PAGER=less
 export TERM=rxvt-256color
+
+# virtualenv stuff
+source /usr/bin/virtualenvwrapper.sh
 
 # OPAM stuff
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+export PATH=/usr/local/texlive/2015/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MATHPATH
+export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
 # remove path duplicates cuz it bothers me
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias ll='ls -alhF'

@@ -13,10 +13,8 @@ Xft.hintstyle:	hintfull
 URxvt*geometry:					130x38
 URxvt*borderLess:				false
 URxvt*scrollBar:				false
-!URxvt*font:						xft:GohuFont:style=Regular:antialias=true
-!URxvt*boldfont:					xft:GohuFont:style=Bold:antialias=true
-URxvt*font:						xft:Terminus:size=14
-URxvt*boldfont:					xft:Terminus:size=14
+URxvt*font:						xft:Terminus:pixelsize=24
+URxvt*boldfont:					xft:Terminus:pixelsize=24
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
 URxvt*urlLauncher:				firefox

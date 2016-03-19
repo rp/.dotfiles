@@ -11,21 +11,24 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+xset +fp /usr/share/fonts/misc
+xset fp rehash
+
 xsetroot -cursor_name left_ptr &
 
 xrdb -load ~/.dotfiles/Xresources
 
 nm-applet &
-xfce4-power-manager
-#tint3 -c ~/.dotfiles/tint3rc &
+xfce4-panel --disable-wm-check &
 
+# fix java
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=setting'
-~/.dotfiles/scripts/java_nonreparenting_wm_hack.sh
+~/.dotfiles/scripts/java_nonreparenting_wm_hack
 
-compton -cCf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
+~/.dotfiles/scripts/user-dirs
+
+compton -cf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
 
 sxhkd -c ~/.dotfiles/sxhkdrc &
-#exec bspwm
 exec bspwm -c ~/.dotfiles/bspwmrc

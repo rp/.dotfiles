@@ -1,0 +1,36 @@
+#!/bin/sh
+
+DIR=~/.dotfiles
+
+linker() {
+	echo "Symlinking dotfiles"
+	for dot in $(ls link) ; do
+	if [ -z ~/.$dot ] || [ -d ~/.$dot ]; then
+		rm -rf ~/.$dot
+	fi
+	ln -sf $DIR/link/$dot ~/.$dot
+	done
+
+	echo "You're all set!"
+}
+
+unlinker() {
+	echo "Unsymlinking dotfiles"
+	for dot in $(ls link) ; do
+	if [ -f ~/.$dot ] || [ -d ~/.$dot ]; then
+		rm -rf ~/.$dot
+	fi
+	done
+
+	echo "You're all set!"
+}
+
+if [ $1 = 'l' ]; then
+	linker
+elif [ $1 = 'u' ]; then
+	unlinker
+else
+	echo "wut"
+fi
+
+exit $?

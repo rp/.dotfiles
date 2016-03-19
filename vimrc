@@ -1,16 +1,3 @@
-" /\ \    _ / /\      /\ \      /\_\/\_\ _   
-" \ \ \  /_/ / /      \ \ \    / / / / //\_\ 
-"  \ \ \ \___\/       /\ \_\  /\ \/ \ \/ / / 
-"  / / /  \ \ \      / /\/_/ /  \____\__/ /  
-"  \ \ \   \_\ \    / / /   / /\/________/   
-"   \ \ \  / / /   / / /   / / /\/_// / /    
-"    \ \ \/ / /   / / /   / / /    / / /     
-"     \ \ \/ /___/ / /__ / / /    / / /      
-"      \ \  //\__\/_/___\\/_/    / / /       
-"       \_\/ \/_________/        \/_/        
-"
-"			-- Rahul Parhi
-
 " MAIN {{{
 
 " general
@@ -94,6 +81,15 @@ nnoremap E $
 " make old things do nothing $/^
 nnoremap $ <nop>
 nnoremap ^ <nop>
+
+" split navigation with Ctrl + {j,k,l,h}
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
 
 " lightline config cuz it looks so kewl
 set laststatus=2
