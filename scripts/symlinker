@@ -8,7 +8,7 @@ linker() {
 	if [ -z ~/.$dot ] || [ -d ~/.$dot ]; then
 		rm -rf ~/.$dot
 	fi
-	ln -sf $DIR/link/$dot ~/.$dot
+	ln -sf $DIR/$dot ~/.$dot
 	done
 
 	echo "You're all set!"
@@ -25,12 +25,16 @@ unlinker() {
 	echo "You're all set!"
 }
 
-if [ $1 = 'l' ]; then
-	linker
-elif [ $1 = 'u' ]; then
-	unlinker
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 [u,l]"
 else
-	echo "wut"
+	if [ $1 = 'l' ]; then
+		linker
+	elif [ $1 = 'u' ]; then
+		unlinker
+	else
+		echo "Usage: $0 [u,l]"
+	fi
 fi
 
 exit $?

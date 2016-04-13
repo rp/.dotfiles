@@ -15,6 +15,7 @@ xset +fp /usr/share/fonts/misc
 xset fp rehash
 
 xsetroot -cursor_name left_ptr &
+#hsetroot -fill ~/wall
 
 xrdb -load ~/.dotfiles/Xresources
 

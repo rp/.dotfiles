@@ -10,7 +10,7 @@ set fileencoding=utf-8
 set number " show line numbers
 set showmatch " highlight matching [{()}]
 set backspace=indent,eol,start " fix backspace cuz it sucks
-set mouse=a " mouse use
+set mouse=nicr " mouse used only for scrolling
 set ruler " show cursor position
 set lazyredraw " redraw only when we need to.
 
@@ -51,7 +51,6 @@ autocmd BufRead,BufNew *.md set filetype=markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 " Set line limits based on filetype
-" We use 80 characters for C/C++, 120 for Python
 au FileType c set colorcolumn=81
 au FileType cpp set colorcolumn=81
 au FileType python set colorcolumn=121
@@ -64,16 +63,16 @@ map <F3> :w !detex \| wc -w<CR>
 " toggle spell check
 map <F4> :setlocal spell! spelllang=en_us<CR>
 
-" Let <F5> strip away trailing whitespace
+" <F5> strip away trailing whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Let <F2> toggle paste mode because of smart indenting being a dummy
+" <F2> toggle paste mode because of smart indenting being a dummy
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+" Ctrl + l to remove remove highlighting
+nnoremap <C-L> :nohlsearch<CR><C-L>
 
 " move to beginning/end of line
 nnoremap B ^
@@ -83,13 +82,15 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " split navigation with Ctrl + {j,k,l,h}
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
+" set statusline=[%n]\ %&lt;%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 
 " lightline config cuz it looks so kewl
 set laststatus=2
@@ -101,5 +102,4 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
-
-" }}}
+ " }}}
