@@ -1,3 +1,5 @@
+#!/bin/sh
+
 xdg-user-dirs-update --set DOCUMENTS $HOME/doc
 xdg-user-dirs-update --set DOWNLOADS $HOME/down
 xdg-user-dirs-update --set DESKTOP $HOME

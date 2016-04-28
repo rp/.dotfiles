@@ -13,8 +13,8 @@ Xft.hintstyle:	hintfull
 URxvt*geometry:					130x38
 URxvt*borderLess:				false
 URxvt*scrollBar:				false
-URxvt*font:						xft:Terminus:pixelsize=24
-URxvt*boldfont:					xft:Terminus:pixelsize=24
+URxvt*font:						xft:Terminus:pixelsize=20
+URxvt*boldfont:					xft:Terminus:pixelsize=20
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
 URxvt*urlLauncher:				firefox
