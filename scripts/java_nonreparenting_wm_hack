@@ -18,5 +18,3 @@ else
     xprop -root -remove _NET_WM_NAME
     xprop -root -f _NET_WM_NAME 8s -set _NET_WM_NAME "$IRONIC_WM_NAME"
 fi
-
-

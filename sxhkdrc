@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	dmenu_run -i -h 20 -y 20 -w 250 -q -l 5 -p "> "
+	dmenu_run -i -h 20 -y 22 -w 354 -q -l 5 -p ">" -nb '#1d1d1d' -nf '#b3b4b1' -sb '#1d1d1d'
 
 super + w
 	firefox

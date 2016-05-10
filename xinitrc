@@ -28,8 +28,6 @@ wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 ~/.dotfiles/scripts/java_nonreparenting_wm_hack
 
-~/.dotfiles/scripts/user-dirs
-
 compton -cf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
 
 sxhkd -c ~/.dotfiles/sxhkdrc &

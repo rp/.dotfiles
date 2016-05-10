@@ -19,8 +19,7 @@ URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
 URxvt*urlLauncher:				firefox
 URxvt*termName:					rxvt-256color
-!URxvt*perl-lib:				/opt/pkg/lib/urxvt/perl/
-!URxvt.perl-ext-common: 		default,macosx-clipboard
+URxvt.perl-ext-common:			default,clipboard,macosx-clipboard
 !URxvt*keysym.M-c: 				perl:macosx-clipboard:copy
 !URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
 !URxvt.letterSpace: 				-1

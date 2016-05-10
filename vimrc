@@ -30,7 +30,7 @@ set t_Co=256
 set background=dark
 colorscheme jellybeans
 
-" make sure to use term background
+" make sure to use term background regardless of colorscheme
 highlight Normal ctermbg=NONE
 highlight LineNr ctermbg=NONE
 highlight nonText ctermbg=NONE
@@ -39,7 +39,7 @@ highlight nonText ctermbg=NONE
 set tabstop=4 " visually tab = 4 spaces, but is still \t
 set shiftwidth=4 " make autoindent and > work with tabstop
 set wildmenu " visual autocomplete for command menu
-set cursorline " highlight current line 
+set cursorline " highlight current line
 set showcmd
 " Enable smart indenting
 filetype plugin indent on
@@ -58,20 +58,21 @@ au FileType python set colorcolumn=121
 " write to files with root privileges
 cmap w!! w !sudo tee % > /dev/null
 
-" Word count in latex documents. Make sure detex is installed.
-map <F3> :w !detex \| wc -w<CR>
-" toggle spell check
-map <F4> :setlocal spell! spelllang=en_us<CR>
-
-" <F5> strip away trailing whitespace
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
 " <F2> toggle paste mode because of smart indenting being a dummy
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" Ctrl + l to remove remove highlighting
+" <F3> Word count in latex documents. Make sure detex is installed.
+nnoremap <F3> :w !detex \| wc -w<CR>
+
+" <F4> toggle spell check
+nnoremap <F4> :setlocal spell! spelllang=en_us<CR>
+
+" <F5> strip away trailing whitespace
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Ctrl + l to remove highlighting
 nnoremap <C-L> :nohlsearch<CR><C-L>
 
 " move to beginning/end of line
@@ -81,7 +82,7 @@ nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
-" split navigation with Ctrl + {j,k,l,h}
+" split navigation with Alt + {j,k,l,h}
 "nnoremap <C-J> <C-W><C-J>
 "nnoremap <C-K> <C-W><C-K>
 "nnoremap <C-L> <C-W><C-L>
@@ -89,17 +90,4 @@ nnoremap ^ <nop>
 
 command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
-
-" set statusline=[%n]\ %&lt;%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-
-" lightline config cuz it looks so kewl
-set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
- " }}}
+" }}}
