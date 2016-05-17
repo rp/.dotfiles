@@ -14,10 +14,14 @@ RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
+# fix backspace
 bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word 
 bindkey "^H" backward-delete-char # Control-h also deletes the previous char
 bindkey "^U" backward-kill-line
+# fix Ctrl + <left/right arrow key>
+bindkey "Oc" forward-word
+bindkey "Od" backward-word
 
 ## }}}
 
