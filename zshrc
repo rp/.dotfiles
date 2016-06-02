@@ -1,5 +1,5 @@
 ## MAIN {{{
-                       
+
 # auto completion
 autoload -U compinit && compinit
 
@@ -7,8 +7,15 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 
 # prompts
+PROMPT_CHAR="»"
 PROMPT="
-%{$fg_bold[black]%}  »  "
+ "
+if [[ ! -z $SSH_CLIENT ]]; then
+	host=$(hostname -s)
+	PROMPT="$PROMPT%{$fg[red]%}($host[1,5])"
+fi
+PROMPT="$PROMPT %{$fg_bold[black]%}$PROMPT_CHAR  "
+
 RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 
 # vi mode
@@ -16,7 +23,7 @@ bindkey -v
 export KEYTIMEOUT=1
 # fix backspace
 bindkey "^?" backward-delete-char
-bindkey "^W" backward-kill-word 
+bindkey "^W" backward-kill-word
 bindkey "^H" backward-delete-char # Control-h also deletes the previous char
 bindkey "^U" backward-kill-line
 # fix Ctrl + <left/right arrow key>
@@ -29,9 +36,12 @@ bindkey "Od" backward-word
 export EDITOR=vim
 export PAGER=less
 export TERM=rxvt-256color
+ulimit -c unlimited # want core's dumped when segfaults in C/C++
 
 # virtualenv stuff
-source /usr/bin/virtualenvwrapper.sh
+if [[ -f /usr/bin.virtualenvwraper.sh ]] then;
+	source /usr/bin/virtualenvwrapper.sh
+fi
 
 # OPAM stuff
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
