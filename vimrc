@@ -93,6 +93,7 @@ nnoremap <A-H> <C-W><C-H>
 
 autocmd Syntax * syn match ExtraWhitespace /\S\s\+$/
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+set list
 
 command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
