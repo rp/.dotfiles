@@ -9,12 +9,12 @@ autoload -U colors && colors
 # prompts
 PROMPT_CHAR="»"
 PROMPT="
-"
+ "
 if [[ ! -z $SSH_CLIENT ]]; then
 	host=$(hostname -s)
 	PROMPT="$PROMPT%{$fg[red]%}($host[1,5])"
 fi
-PROMPT="$PROMPT  %{$fg_bold[black]%}$PROMPT_CHAR  "
+PROMPT="$PROMPT %{$fg_bold[black]%}$PROMPT_CHAR  "
 
 RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 
