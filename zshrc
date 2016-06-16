@@ -9,12 +9,12 @@ autoload -U colors && colors
 # prompts
 PROMPT_CHAR="»"
 PROMPT="
- "
+"
 if [[ ! -z $SSH_CLIENT ]]; then
 	host=$(hostname -s)
 	PROMPT="$PROMPT%{$fg[red]%}($host[1,5])"
 fi
-PROMPT="$PROMPT %{$fg_bold[black]%}$PROMPT_CHAR  "
+PROMPT="$PROMPT  %{$fg_bold[black]%}$PROMPT_CHAR  "
 
 RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 
@@ -36,10 +36,9 @@ bindkey "Od" backward-word
 export EDITOR=vim
 export PAGER=less
 export TERM=rxvt-256color
-ulimit -c unlimited # want core's dumped when segfaults in C/C++
 
 # virtualenv stuff
-if [[ -f /usr/bin.virtualenvwraper.sh ]] then;
+if [[ -f /usr/bin/virtualenvwrapper.sh ]] then;
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
@@ -90,6 +89,6 @@ alias gdc='git diff --cached'
 ## FUNCTIONS {{{
 
 cd () {
-    builtin cd $@ && ls -CF
+	builtin cd $@ && ls -CF
 }
 ## }}}
