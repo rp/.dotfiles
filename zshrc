@@ -39,7 +39,7 @@ export TERM=rxvt-256color
 
 # virtualenv stuff
 if [[ -f /usr/bin/virtualenvwrapper.sh ]] then;
-	source /usr/bin/virtualenvwrapper.sh
+	source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
 # OPAM stuff
