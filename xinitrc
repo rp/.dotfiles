@@ -21,6 +21,7 @@ numlockx &
 xrdb -load ~/.dotfiles/Xresources
 
 nm-applet &
+pnmixer &
 xfce4-panel --disable-wm-check &
 
 # fix java

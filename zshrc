@@ -84,6 +84,8 @@ alias gl='glf | head'
 alias gd='git diff'
 alias gdc='git diff --cached'
 
+alias pacclean='sudo pacman -Rns $(pacman -Qqtd)'
+
 ## }}}
 
 ## FUNCTIONS {{{

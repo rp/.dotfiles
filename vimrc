@@ -13,6 +13,7 @@ set backspace=indent,eol,start " fix backspace cuz it sucks
 set mouse=nicr " mouse used only for scrolling
 set ruler " show cursor position
 "set lazyredraw " redraw only when we need to.
+set ff=unix
 
 if v:version >= 700
 	set numberwidth=3
@@ -97,6 +98,11 @@ set list
 
 command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 " }}}
 
 function! InsertStatuslineColor(mode)
