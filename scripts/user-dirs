@@ -5,3 +5,13 @@ mkdir -p $HOME/down
 mkdir -p $HOME/mus
 mkdir -p $HOME/img
 mkdir -p $HOME/vid
+
+xdg-user-dirs-update --set DOCUMENTS $HOME/doc
+xdg-user-dirs-update --set DOWNLOADS $HOME/down
+xdg-user-dirs-update --set DESKTOP $HOME/
+xdg-user-dirs-update --set MUSIC $HOME/mus
+xdg-user-dirs-update --set PICTURES $HOME/img
+xdg-user-dirs-update --set VIDEOS $HOME/vid
+xdg-user-dirs-update --set PUBLICSHARE $HOME/
+xdg-user-dirs-update --set TEMPLATES $HOME/
+

@@ -32,5 +32,8 @@ _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp,lcd'
 
 compton -cf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
 
+# xdg user-dirs
+~/.dotfiles/scripts/user-dirs
+
 sxhkd -c ~/.dotfiles/sxhkdrc &
 exec bspwm -c ~/.dotfiles/bspwmrc
