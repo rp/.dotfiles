@@ -46,6 +46,7 @@ fi
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # remove path duplicates cuz it bothers me
+PATH=~/bin:$PATH
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
 alias ls='ls --color=auto'
@@ -69,20 +70,7 @@ alias s='sudo'
 
 alias vi='vim'
 
-# stole these git aliases from some fool on reddit
-alias gs='git status'
-alias ga='git add -u'
-alias gaa='git add -A'
-alias gc='git commit'
-alias gr='git checkout --' # gr means "git revert"
-alias gu='git reset HEAD'  # gu means "git unstage"
-alias gch='git checkout'
-alias gst='git stash save'
-alias gmm='git fetch && git merge origin/master'
-alias glf="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" # "git log full"
-alias gl='glf | head'
-alias gd='git diff'
-alias gdc='git diff --cached'
+#alias glf="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" # "git log full"
 
 alias pacclean='sudo pacman -Rns $(pacman -Qqtd)'
 
