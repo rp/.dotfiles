@@ -24,7 +24,7 @@ URxvt.perl-ext-common:			default,clipboard,macosx-clipboard
 !URxvt*keysym.M-v: 				perl:macosx-clipboard:paste
 !URxvt.letterSpace: 				-1
 
-! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.     
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
 URxvt.keysym.C-0: command:\033]710;xft:Terminus:pixelsize=20\007
 URxvt.keysym.C-minus: command:\033]710;xft:Terminus:pixelsize=10\007
 URxvt.keysym.C-equal: command:\033]710;xft:Terminus:pixelsize=30\007
@@ -57,3 +57,12 @@ URxvt*foreground:		#b3b4b1
 
 *highlightColor:            #665847
 *highlightTextColor:        #ffffff
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c

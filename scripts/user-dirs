@@ -5,6 +5,8 @@ mkdir -p $HOME/down
 mkdir -p $HOME/mus
 mkdir -p $HOME/img
 mkdir -p $HOME/vid
+mkdir -p $HOME/mnt
+mkdir -p $HOME/code
 
 xdg-user-dirs-update --set DOCUMENTS $HOME/doc
 xdg-user-dirs-update --set DOWNLOADS $HOME/down
