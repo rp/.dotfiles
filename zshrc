@@ -29,6 +29,8 @@ bindkey "^U" backward-kill-line
 # fix Ctrl + <left/right arrow key>
 bindkey "Oc" forward-word
 bindkey "Od" backward-word
+#fix delete
+bindkey "^[[3~" delete-char
 
 ## }}}
 
