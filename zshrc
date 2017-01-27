@@ -48,7 +48,7 @@ fi
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # remove path duplicates cuz it bothers me
-PATH=~/bin:$PATH
+PATH=~/bin:~/.local/bin/:$PATH
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
 alias ls='ls --color=auto'
