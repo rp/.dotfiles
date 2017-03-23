@@ -9,12 +9,12 @@ autoload -U colors && colors
 # prompts
 PROMPT_CHAR="»"
 PROMPT="
- "
+"
 if [[ ! -z $SSH_CLIENT ]]; then
-	host=$(hostname -s)
-	PROMPT="$PROMPT%{$fg[red]%}($host[1,5])"
+    host=$(hostname)
+    PROMPT="$PROMPT  %{$fg[red]%}($host[1,5])"
 fi
-PROMPT="$PROMPT %{$fg_bold[black]%}$PROMPT_CHAR  "
+PROMPT="$PROMPT  %{$fg_bold[black]%}$PROMPT_CHAR  "
 
 RPROMPT="%{$fg_bold[blue]%}%~%{$reset_color%}  "
 
@@ -41,7 +41,7 @@ export TERM=rxvt-256color
 
 # virtualenv stuff
 if [[ -f /usr/bin/virtualenvwrapper.sh ]] then;
-	source /usr/bin/virtualenvwrapper_lazy.sh
+    source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
 # OPAM stuff
@@ -76,11 +76,14 @@ alias vi='vim'
 
 alias pacclean='sudo pacman -Rns $(pacman -Qqtd)'
 
+alias reboot='reboot || sudo reboot > /dev/null 2>&1'
+alias poweroff='poweroff || sudo poweroff > /dev/null 2>&1'
+
 ## }}}
 
 ## FUNCTIONS {{{
 
 cd () {
-	builtin cd $@ && ls -CF
+    builtin cd $@ && ls -CF
 }
 ## }}}

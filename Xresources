@@ -1,4 +1,4 @@
-! Xft Settings ---------------------------------------------------------------
+! Xft
 
 Xft.autohint:                       0
 Xft.lcdfilter:                      lcddefault
@@ -8,13 +8,13 @@ Xft.rgba:                           rgb
 Xft.hinting:                        1
 Xft.hintstyle:                      hintfull
 
-! URxvt Settings -------------------------------------------------------------
+! URxvt
 
 URxvt*geometry:                     130x38
 URxvt*borderLess:                   false
 URxvt*scrollBar:                    false
-URxvt*font:                         -*-terminus-*-*-*-*-18-*-*-*-*-*-*-*
-URxvt*boldfont:                     -*-terminus-*-*-*-*-18-*-*-*-*-*-*-*
+URxvt*font:                         -*-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*boldfont:                     -*-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
 URxvt*cursorBlink:                  true
 URxvt*cursorUnderline:              true
 URxvt*urlLauncher:                  firefox
@@ -22,44 +22,44 @@ URxvt*termName:                     rxvt-256color
 URxvt.perl-ext-common:              default,clipboard,macosx-clipboard
 
 ! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
-URxvt.keysym.C-0:                   command:\033]710;-*-terminus-*-*-*-*-16-*-*-*-*-*-*-*\007
-URxvt.keysym.C-minus:               command:\033]710;-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*\007
-URxvt.keysym.C-equal:               command:\033]710;-*-terminus-*-*-*-*-22-*-*-*-*-*-*-*\007
-
+URxvt.keysym.C-minus:               command:\033]710;-*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*\007
+URxvt.keysym.C-0:                   command:\033]710;-*-terminus-medium-*-*-*-18-*-*-*-*-*-*-*\007
+URxvt.keysym.C-equal:               command:\033]710;-*-terminus-medium-*-*-*-22-*-*-*-*-*-*-*\007
 
 URxvt.colorIT:                      #cacaca
-URxvt.colorBD:            #ede265
+URxvt.colorBD:                      #ede265
 
-URxvt.colorUL:            #ffffff
-URxvt*background:        #1d1d1d
-URxvt*foreground:        #b3b4b1
+URxvt.colorUL:                      #ffffff
+URxvt*background:                   #1d1d1d
+URxvt*foreground:                   #b3b4b1
 
-*color0:    #1d1d1d
-*color1:    #784742
-*color2:    #427363
-*color3:    #665847
-*color4:    #6a708b
-*color5:    #7a378b
-*color6:    #52707b
-*color7:    #b3b3b3
+! Colors
+!
+*color0:                            #1d1d1d
+*color1:                            #784742
+*color2:                            #427363
+*color3:                            #665847
+*color4:                            #6a708b
+*color5:                            #7a378b
+*color6:                            #52707b
+*color7:                            #b3b3b3
 
-*color8:    #4c4c4c
-*color9:    #d43f10
-*color10:   #cef318
-*color11:   #ede265
-*color12:   #6ac0fd
-*color13:   #ef79ae
-*color14:   #49d4dd
-*color15:   #ffffff
+*color8:                            #4c4c4c
+*color9:                            #d43f10
+*color10:                           #cef318
+*color11:                           #ede265
+*color12:                           #6ac0fd
+*color13:                           #ef79ae
+*color14:                           #49d4dd
+*color15:                           #ffffff
 
-*highlightColor:            #665847
-*highlightTextColor:        #ffffff
+*highlightColor:                    #665847
+*highlightTextColor:                #ffffff
 
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: #393939, #393939, #268bd2
-rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
-rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
-rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+
+! ROFI
+rofi.color-enabled:                 true
+rofi.color-window:                  #393939, #393939, #268bd2
+rofi.color-normal:                  #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active:                  #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent:                  #393939, #f3843d, #393939, #268bd2, #ffc39c
