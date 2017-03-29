@@ -3,38 +3,51 @@
 DIR=~/.dotfiles
 
 linker() {
-	echo "Symlinking dotfiles"
-	for dot in $(ls link) ; do
-	if [ -z ~/.$dot ] || [ -d ~/.$dot ]; then
-		rm -rf ~/.$dot
-	fi
-	ln -sf $DIR/$dot ~/.$dot
-	done
+    echo "Symlinking dotfiles"
+    for f in $(ls dot) ; do
+        if [ -z ~/.$f ] || [ -d ~/.$f ]; then
+            rm -rf ~/.$f
+        fi
+        ln -sf $DIR/dot/$f ~/.$f
+    done
 
-	echo "You're all set!"
+    for f in $(ls nodot) ; do
+        if [ -z ~/$f ] || [ -d ~/$f ]; then
+            rm -rf ~/$f
+        fi
+        ln -sf $DIR/nodot/$f ~/$f
+    done
+
+    echo "You're all set!"
 }
 
 unlinker() {
-	echo "Unsymlinking dotfiles"
-	for dot in $(ls link) ; do
-	if [ -f ~/.$dot ] || [ -d ~/.$dot ]; then
-		rm -rf ~/.$dot
-	fi
-	done
+    echo "Unsymlinking dotfiles"
+    for f in $(ls dot) ; do
+        if [ -f ~/.$f ] || [ -d ~/.$f ]; then
+            rm -rf ~/.$f
+        fi
+    done
 
-	echo "You're all set!"
+    for f in $(ls nodot) ; do
+        if [ -f ~/$f ] || [ -d ~/$f ]; then
+            rm -rf ~/$f
+        fi
+    done
+
+    echo "You're all set!"
 }
 
 if [ $# -ne 1 ]; then
-	echo "Usage: $0 [u,l]"
+    echo "Usage: $0 [u,l]"
 else
-	if [ $1 = 'l' ]; then
-		linker
-	elif [ $1 = 'u' ]; then
-		unlinker
-	else
-		echo "Usage: $0 [u,l]"
-	fi
+    if [ $1 = 'l' ]; then
+        linker
+    elif [ $1 = 'u' ]; then
+        unlinker
+    else
+        echo "Usage: $0 [u,l]"
+    fi
 fi
 
 exit $?
