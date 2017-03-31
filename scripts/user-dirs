@@ -9,7 +9,7 @@ mkdir -p $HOME/mnt
 mkdir -p $HOME/code
 
 xdg-user-dirs-update --set DOCUMENTS $HOME/doc
-xdg-user-dirs-update --set DOWNLOADS $HOME/down
+xdg-user-dirs-update --set DOWNLOAD $HOME/down
 xdg-user-dirs-update --set DESKTOP $HOME/
 xdg-user-dirs-update --set MUSIC $HOME/mus
 xdg-user-dirs-update --set PICTURES $HOME/img
