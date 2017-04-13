@@ -3,10 +3,12 @@
 
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{mathtools}
+\RequirePackage{algpseudocode}
 
 % Fix Math {{{
 
 \DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Vol}{Vol}
 
 % fix spacing with \left and \right
 \let\originalleft\left
@@ -45,6 +47,10 @@
 }
 \makeatother
 
+\newcommand{\pd}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dd}[1]{\,\textrm d{#1}}
+\newcommand{\de}[2][]{\frac{\mathrm d{#1}}{\mathrm d{#2}}}
+
 % }}}
 
 % Probability {{{
@@ -63,6 +69,9 @@
 \DeclareMathOperator{\Geo}{Geo}
 \DeclareMathOperator{\N}{\mathcal{N}}
 \DeclareMathOperator{\U}{\mathcal{U}}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Pareto}{Pareto}
+\DeclareMathOperator{\Laplace}{Laplace}
 
 % }}}
 
