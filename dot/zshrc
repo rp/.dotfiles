@@ -75,6 +75,7 @@ alias vi='vim'
 #alias glf="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" # "git log full"
 
 alias pacclean='sudo pacman -Rns $(pacman -Qqtd)'
+alias synctime='sudo ntpdate -s pool.ntp.org'
 
 alias reboot='reboot || sudo reboot > /dev/null 2>&1'
 alias poweroff='poweroff || sudo poweroff > /dev/null 2>&1'
