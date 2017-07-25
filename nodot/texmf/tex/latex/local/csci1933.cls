@@ -103,6 +103,10 @@
 \date{\vspace{-35pt}} % not the best way to do it, but meh
 \author{}
 
+\let\oldsection\section
+\def\section{\@ifstar\@unstarredsection\oldsection}
+\def\@unstarredsection#1{\oldsection*{#1}\markright{\MakeUppercase{#1}}}
+
 % make abstract title \sffamily and fix spacing with vspace h4xing
 \renewcommand\abstractnamefont{\sffamily}
 \addto{\captionsenglish}{\renewcommand{\abstractname}{\vspace{20pt}Abstract\vspace{-20pt}}}
@@ -173,7 +177,5 @@
 \renewcommand{\cftsubsubsecpagefont}{\sffamily}
 
 % hack to fix old version of package deleting section numbers
-\makeatletter
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}
-\makeatother

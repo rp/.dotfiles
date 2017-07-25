@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# turn hhkb to bootloader mode
+# LShift + RShift + Fn + p
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 [u,l]"
+else
+    sudo dfu-programmer atmega32u4 erase --force
+    sudo dfu-programmer atmega32u4 flash $1
+    sudo dfu-programmer atmega32u4 reset

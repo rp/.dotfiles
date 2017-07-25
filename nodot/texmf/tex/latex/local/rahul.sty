@@ -2,13 +2,16 @@
 \ProvidesPackage{rahul}[2017/03/23 new commands and stuff]
 
 \RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{bbm}
 \RequirePackage{mathtools}
 \RequirePackage{algpseudocode}
+\RequirePackage{microtype}
 
 % Fix Math {{{
 
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Tr}{Tr}
 
 % fix spacing with \left and \right
 \let\originalleft\left
@@ -21,7 +24,6 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-\makeatletter
 \let\oldabs\abs
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
 %
@@ -35,9 +37,7 @@
 %
 \let\oldfloor\floor
 \def\floor{\@ifstar{\oldfloor}{\oldfloor*}}
-\makeatother
 
-\makeatletter
 \def\mathcolor#1#{\@mathcolor{#1}}
 \def\@mathcolor#1#2#3{%
   \protect\leavevmode
@@ -45,26 +45,30 @@
     \color#1{#2}#3%
   \endgroup
 }
-\makeatother
 
 \newcommand{\pd}[2][]{\frac{\partial#1}{\partial#2}}
 \newcommand{\dd}[1]{\,\textrm d{#1}}
 \newcommand{\de}[2][]{\frac{\mathrm d{#1}}{\mathrm d{#2}}}
 
+\let\oldhat\hat
+\renewcommand{\hat}[1]{\vphantom{#1}\smash[t]{\oldhat{#1}}}
+
 % }}}
 
 % Probability {{{
 
-\newcommand\given[1][]{\:#1\vert\:}
+\newcommand\given[1][]{\:\ifnum\currentgrouptype=16\middle\fi|\:}
 
 \newcommand\indep{\protect\mathpalette{\protect\indephelper}{\perp}}
 \def\indephelper#1#2{\mathrel{\rlap{$#1#2$}\mkern4mu{#1#2}}}
 
 \newcommand{\E}[2][]{\mathbb{E}_{#1}\left[#2\right]}
 \renewcommand{\Pr}[1]{\mathbb{P}\left[#1\right]}
-\newcommand{\var}[2][]{\textsf{var}_{#1}\left[#2\right]}
-\newcommand{\cov}[2][]{\textsf{cov}_{#1}\left[#2\right]}
+\newcommand{\Var}[2][]{\textsf{Var}_{#1}\left[#2\right]}
+\newcommand{\Cov}[2][]{\textsf{Cov}_{#1}\left[#2\right]}
+\newcommand{\I}[1]{\mathbbm{1}_{#1}}
 
+\DeclareMathOperator{\IID}{IID}
 \DeclareMathOperator{\Ber}{Ber}
 \DeclareMathOperator{\Geo}{Geo}
 \DeclareMathOperator{\N}{\mathcal{N}}
