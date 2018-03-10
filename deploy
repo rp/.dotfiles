@@ -2,6 +2,7 @@
 
 TMPFILE=$(mktemp /tmp/dotfiles.XXXXXX)
 IGNORE=$PWD/dotfiles.ignore
+ME=$0
 
 R=`tput setaf 1`
 G=`tput setaf 2`
@@ -20,19 +21,16 @@ ignore() {
 
 listfiles() {
     cat <<EOF > $TMPFILE
+# This is an auto-generated file for linking config files to your
+# $HOME directory
 #
-# Here is an auto-generated file for linking
-# config file to your $HOME directory
+# This script will read filenames from this file in order to create
+# ONLY the links you want. Lines starting with '#' will be ignored.
 #
-# The $0 script will read filenames from that
-# file in order to create ONLY the links you
-# want.
-#
-# The following list lists every. single. file
-# or directory. Just remove the line that you
-# don't want to be linked.
-# Then, save that file, and watch the magic happen...
-#
+# The following list lists every. single. file or directory. Just
+# remove the line that you don't want to be linked. Then, save that
+# file, and watch the magic happen...
+
 EOF
 
     echo "listing the whole directory"
@@ -70,8 +68,8 @@ link() {
 }
 
 listfiles
-#config
-#simulate
-#link
+config
+simulate
+link
 
 exit $?
