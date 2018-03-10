@@ -1,0 +1,18 @@
+Fixing mute bug:
+
+change /etc/asound.conf to exactly
+
+pcm.pulse {
+   type pulse
+}
+ctl.pulse {
+   type pulse
+}
+pcm.!default {
+   type pulse
+}
+ctl.!default {
+   type pulse
+}
+
+info from https://wiki.manjaro.org/index.php?title=Volume_Stuck_on_Mute_(XFCE_Desktop)

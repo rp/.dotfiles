@@ -47,6 +47,11 @@ fi
 # OPAM stuff
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# Scala stuff
+#if [[ -d /usr/share/scala ]] then;
+#    export SCALA_HOME=/usr/share/scala
+#fi
+
 # remove path duplicates cuz it bothers me
 PATH=~/bin:~/.local/bin/:$PATH
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`

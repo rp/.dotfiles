@@ -1,0 +1,7 @@
+Install intellij and intellij-jdk (aur) and actual jdk.
+
+Start intellij and select which JDK for it to boot from by doing
+
+    - Ctrl+Shift+A and type "Switch IDE Boot JDK" and select intellij-jdk
+
+Info from here: https://intellij-support.jetbrains.com/hc/en-us/articles/206544879-Selecting-the-JDK-version-the-IDE-will-run-under

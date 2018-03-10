@@ -8,7 +8,7 @@ fi
 xset +fp /usr/share/fonts/misc
 xset fp rehash
 
-#hsetroot -fill ~/.wall
+hsetroot -fill ~/.wall
 
 xsetroot -cursor_name left_ptr &
 numlockx &
@@ -16,9 +16,8 @@ numlockx &
 xrdb -load ~/.dotfiles/Xresources
 
 start-pulseaudio-x11 &
-nm-applet &
-pnmixer &
-xfce4-panel --disable-wm-check &
+
+caffeine &
 
 # fix java
 wmname LG3D
@@ -31,8 +30,13 @@ compton -cf -D2 -e 0.4 -o1 -r8 -l-12 -t-12 &
 # xdg user-dirs
 ~/.dotfiles/scripts/user-dirs
 
+autorandr --change
+
 xset +dpms
 xset dpms 0 0 300
+
+# map capslock to left ctrl
+~/.dotfiles/scripts/nocaps.sh
 
 sxhkd -c ~/.dotfiles/sxhkdrc &
 exec bspwm -c ~/.dotfiles/bspwmrc
