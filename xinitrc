@@ -16,7 +16,7 @@ hsetroot -fill $WALL
 xsetroot -cursor_name left_ptr &
 numlockx &
 
-xrdb -load $DOTFILES/Xresources
+xrdb -load $DOTFILES/xrdb.conf
 
 start-pulseaudio-x11 &
 caffeine &
