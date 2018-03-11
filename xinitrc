@@ -11,7 +11,7 @@ WALL=$HOME/.wall
 xset +fp /usr/share/fonts/misc
 xset fp rehash
 
-hsetroot -fill $WALL
+xli -onroot -fit $WALL
 
 xsetroot -cursor_name left_ptr &
 numlockx &
