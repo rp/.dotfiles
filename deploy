@@ -1,7 +1,7 @@
 #!/bin/sh
 
 TMPFILE=$(mktemp /tmp/dotfiles.XXXXXX)
-IGNORE=$PWD/dotfiles.ignore
+IGNORE=$PWD/deploy.ignore
 ME=$0
 
 R=`tput setaf 1`
@@ -62,8 +62,8 @@ simulate() {
 link() {
     read -p "hit ^C to abort..."
     for f in `grep -v '^#' $TMPFILE`; do
-      echo -n "${f} ... "
-      ln -sf $PWD/$f ~/.$f 2>/dev/null && echo $OK || echo $NOPE
+        echo -n "${f} ... "
+        ln -sfn $PWD/$f ~/.$f 2>/dev/null && echo $OK || echo $NOPE
     done
 }
 
