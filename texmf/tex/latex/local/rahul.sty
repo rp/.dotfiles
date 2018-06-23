@@ -9,7 +9,7 @@
 
 % memes {{{
 
-\newcommand{\shrug}[1]{%
+\newcommand{\shrug}[1][]{%
   \begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
     \def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
     \draw \arm;
@@ -59,10 +59,13 @@
 \DeclareMathOperator{\Vol}{Vol}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\diam}{diam}
 % variation of a function, not variable nor variance
 \DeclareMathOperator{\V}{Var}
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\rank}{rank}
 
 % fix spacing with \left and \right
 \let\originalleft\left
@@ -123,7 +126,7 @@
 \let\oldhat\hat
 \renewcommand{\hat}[1]{\vphantom{#1}\smash[t]{\oldhat{#1}}}
 
-\newcommand\evalBracket[1]{{\left[#1\vphantom{\Big|}\right|}}
+\newcommand\evalBracket[1]{{\left[#1\vphantom{\big|}\right|}}
 \newcommand\evalNoBracket[1]{{\left.\kern-\nulldelimiterspace#1\vphantom{\Big|}\right|}}
 \def\eval{\@ifstar\evalBracket\evalNoBracket}
 
@@ -161,8 +164,8 @@
 \newcommand{\E}[2][]{\mathbb{E}_{#1}\left[#2\right]}
 
 % h4x
-\newcommand{\bbPr}[2][]{\mathbb{P}_{#1}\left(#2\right)\,}
-\newcommand{\bfPr}[2][]{\mathbf{P}_{#1}\left(#2\right)\,}
+\newcommand{\bbPr}[2][]{\mathbb{P}_{#1}\left(#2\right)}
+\newcommand{\bfPr}[2][]{\mathbf{P}_{#1}\left(#2\right)}
 \def\Pr{\@ifstar\bfPr\bbPr}
 
 \newcommand{\Var}[2][]{\textsf{Var}_{#1}\left(#2\right)}
