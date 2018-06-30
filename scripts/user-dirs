@@ -18,11 +18,10 @@ xdg-user-dirs-update --set PUBLICSHARE $HOME/
 xdg-user-dirs-update --set TEMPLATES $HOME/
 
 emptyCheck() {
-    target = $1
-    if find "$target" -mindepth 1 -print -quit | grep -q .; then
-        echo there are files in $target
+    if [ -d $1 ] && find "$1" -mindepth 1 -print -quit | grep -q .; then
+        echo there are files in $1
     else
-        rm -rf $target
+        rm -rf $1
     fi
 }
 
