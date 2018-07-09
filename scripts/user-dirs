@@ -1,21 +1,22 @@
 #!/bin/sh
 
+mkdir -p $HOME/code
 mkdir -p $HOME/doc
 mkdir -p $HOME/down
-mkdir -p $HOME/mus
 mkdir -p $HOME/img
-mkdir -p $HOME/vid
 mkdir -p $HOME/mnt
-mkdir -p $HOME/code
+mkdir -p $HOME/mus
+mkdir -p $HOME/scratch
+mkdir -p $HOME/vid
 
+xdg-user-dirs-update --set DESKTOP $HOME/
 xdg-user-dirs-update --set DOCUMENTS $HOME/doc
 xdg-user-dirs-update --set DOWNLOAD $HOME/down
-xdg-user-dirs-update --set DESKTOP $HOME/
 xdg-user-dirs-update --set MUSIC $HOME/mus
 xdg-user-dirs-update --set PICTURES $HOME/img
-xdg-user-dirs-update --set VIDEOS $HOME/vid
 xdg-user-dirs-update --set PUBLICSHARE $HOME/
 xdg-user-dirs-update --set TEMPLATES $HOME/
+xdg-user-dirs-update --set VIDEOS $HOME/vid
 
 emptyCheck() {
     if [ -d $1 ] && find "$1" -mindepth 1 -print -quit | grep -q .; then
@@ -25,10 +26,12 @@ emptyCheck() {
     fi
 }
 
+emptyCheck $HOME/Desktop
 emptyCheck $HOME/Documents
 emptyCheck $HOME/Downloads
 emptyCheck $HOME/Music
 emptyCheck $HOME/Pictures
-emptyCheck $HOME/Videos
+emptyCheck $HOME/Public
 emptyCheck $HOME/Templates
+emptyCheck $HOME/Videos
 

@@ -2,4 +2,6 @@
     name = Rahul Parhi
     email = rahul@parhi.com
 [core]
-	excludesfile = /home/rahul/.gitignore
+    excludesfile = /home/rahul/.gitignore
+
+; vim:ft=dosini

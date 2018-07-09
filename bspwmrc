@@ -2,7 +2,7 @@
 
 bspc config border_width          3
 bspc config window_gap            12
-bspc config top_padding           20
+#bspc config top_padding           20
 bspc config focus_follows_pointer true
 bspc config click_to_focus        true
 
