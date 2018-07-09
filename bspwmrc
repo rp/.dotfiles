@@ -18,7 +18,8 @@ bspc rule -a Gimp state=floating follow=on
 bspc rule -a Zathura state=tiled
 
 
-~/.dotfiles/scripts/polybar.sh
+$DOTFILES/scripts/polybar.sh
 bspc subscribe monitor_geometry | while read -a msg ; do
-    ~/.dotfiles/scripts/polybar.sh
+    $DOTFILES/scripts/polybar.sh
 done &
+
