@@ -1,4 +1,4 @@
-﻿## MAIN {{{
+## MAIN {{{
 
 # auto completion
 autoload -U compinit && compinit
