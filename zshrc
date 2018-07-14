@@ -1,4 +1,4 @@
-## MAIN {{{
+﻿## MAIN {{{
 
 # auto completion
 autoload -U compinit && compinit
@@ -7,7 +7,7 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 
 # prompts
-PROMPT_CHAR="�"
+PROMPT_CHAR="»"
 PROMPT="
 "
 if [[ ! -z $SSH_CLIENT ]]; then
