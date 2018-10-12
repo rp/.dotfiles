@@ -31,6 +31,9 @@ set smartcase
 nnoremap j gj
 nnoremap k gk
 
+" quick and easy comment/uncomment
+vnoremap <C-n> :norm
+
 " color/theme
 syntax on
 set t_Co=256
@@ -109,6 +112,25 @@ command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+"call plug#begin('~/.vim/plugged')
+"
+"    "Plug 'lervag/vimtex'
+"    Plug 'vim-latex/vim-latex'
+"
+"    " YCM build is a little more complicated
+"    function! BuildYCM(info)
+"      if a:info.status == 'installed' || a:info.force
+"        !./install.py
+"      endif
+"    endfunction
+"    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+"    Plug 'Valloric/ycmd'
+"
+"call plug#end()
+
+"let g:vimtex_disable_version_warning=1
+"let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " }}}
 
