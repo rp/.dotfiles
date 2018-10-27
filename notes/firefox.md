@@ -12,6 +12,10 @@ Specifically, they are:
 * [https everywhere](https://www.eff.org/https-everywhere/)
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
 
+I also use:
+
+* [greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+
 Other stuff
 -----------
 
