@@ -1,5 +1,10 @@
 #!/bin/sh
 
+$DOTFILES/scripts/polybar.sh
+bspc subscribe monitor_geometry | while read -a msg ; do
+    $DOTFILES/scripts/polybar.sh
+done &
+
 bspc config border_width          3
 bspc config window_gap            12
 #bspc config top_padding           20
@@ -15,11 +20,6 @@ bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
 #bspc monitor DP1-1 -d 31 32 33 34 35
 
 bspc rule -a Gimp state=floating follow=on
+bspc rule -a Yad state=floating follow=on
 bspc rule -a Zathura state=tiled
-
-
-$DOTFILES/scripts/polybar.sh
-bspc subscribe monitor_geometry | while read -a msg ; do
-    $DOTFILES/scripts/polybar.sh
-done &
 

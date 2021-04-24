@@ -58,7 +58,7 @@ set breakindent
 
 " Filetype specific stuff
 au FileType c,cpp set textwidth=80 expandtab!
-au FileType haskell,ocaml,tex,html,css set shiftwidth=2 tabstop=2 softtabstop=2
+au FileType haskell,ocaml,tex,html,css,yaml set shiftwidth=2 tabstop=2 softtabstop=2
 au FileType tex,cls,markdown set textwidth=80
 
 autocmd BufNewFile,BufRead *.cls set syntax=tex

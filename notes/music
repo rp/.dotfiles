@@ -1,0 +1,8 @@
+picard for fixing things
+quodlibet for listening
+
+to rip cds install abdcde, flac, glyr
+
+rip cds with `abcde -o flac -a default,getalbumart`
+
+use this for album artwork: https://bendodson.com/projects/itunes-artwork-finder/index.html

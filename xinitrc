@@ -12,7 +12,7 @@ xrdb -load $DOTFILES/xrdb.conf
 xset +fp /usr/share/fonts/misc
 xset fp rehash
 
-xli -onroot -fit $WALL
+#xli -onroot -fill $WALL
 
 xsetroot -cursor_name left_ptr &
 numlockx &
@@ -28,6 +28,7 @@ $DOTFILES/scripts/java_nonreparenting_wm_hack
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp,lcd'
 export JAVA_FONTS=/usr/share/fonts/TTF
 export IDEA_JDK=/usr/lib/jvm/intellij-jdk
+export PYCHARM_JDK=/usr/lib/jvm/intellij-jdk
 
 # gotta composit, yo
 compton -cf -D1 -e 0.4 -o1 -r8 -l-12 -t-12 &

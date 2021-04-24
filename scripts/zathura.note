@@ -1,0 +1,4 @@
+run with
+
+mkdir -pv $HOME/.config/zathura && ./genzathura.sh > $HOME/.config/zathura/zathurarc
+
