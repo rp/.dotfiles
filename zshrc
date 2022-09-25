@@ -53,7 +53,7 @@ fi
 #fi
 
 # remove path duplicates cuz it bothers me
-PATH=~/bin:~/.local/bin/:$PATH
+PATH=~/bin:~/.local/bin/:/opt/local/bin:$PATH
 export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
 alias ls='ls --color=auto'
